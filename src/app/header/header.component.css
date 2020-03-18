@@ -1,0 +1,18 @@
+
+.navbar-nav{
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    margin:30px;
+    font-size: larger;
+    
+
+}
+
+.space1{
+    margin: 100px;
+}
+
+.titulo{
+    background-color: rgb(185, 235, 250);
+}

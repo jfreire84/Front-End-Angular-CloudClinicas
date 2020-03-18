@@ -1,0 +1,12 @@
+.row{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    font-size: larger;
+}
+
+.card{
+    margin: 50px;
+}
+
