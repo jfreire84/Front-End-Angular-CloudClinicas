@@ -1,3 +1,7 @@
 .card-title, table{
     color: gray;
 }
+
+.btn_crear{
+    margin-bottom: 15px;
+}

@@ -9,11 +9,15 @@ import {RouterModule, Routes} from '@angular/router';
 import { PacienteComponent } from './paciente/paciente.component';
 import { HttpClientModule} from '@angular/common/http';
 import { PacienteService} from './paciente/paciente.service';
+import { FormularioComponent } from './paciente/formulario.component';
+import { FormsModule } from '@angular/forms';
+
 
 const routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'pacientes', component: PacienteComponent},
+  {path: 'paciente/formulario', component: FormularioComponent},
 ]
 
 @NgModule({
@@ -22,11 +26,13 @@ const routes = [
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    PacienteComponent
+    PacienteComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    FormsModule,
     HttpClientModule
   ],
   providers: [PacienteService],
