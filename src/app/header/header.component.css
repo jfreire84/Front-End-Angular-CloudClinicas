@@ -5,8 +5,6 @@
     transform: translatex(-50%);
     margin:30px;
     font-size: larger;
-    
-
 }
 
 .space1{
@@ -14,5 +12,6 @@
 }
 
 .titulo{
-    background-color: rgb(185, 235, 250);
+    background-color: rgb(68, 69, 70);
 }
+

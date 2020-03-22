@@ -6,12 +6,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
-import { ClientesComponent } from './clientes/clientes.component';
+import { PacienteComponent } from './paciente/paciente.component';
+import { HttpClientModule} from '@angular/common/http';
+import { PacienteService} from './paciente/paciente.service';
 
 const routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'clientes', component: ClientesComponent},
+  {path: 'pacientes', component: PacienteComponent},
 ]
 
 @NgModule({
@@ -20,13 +22,14 @@ const routes = [
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    ClientesComponent
+    PacienteComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PacienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
