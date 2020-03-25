@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Paciente } from './paciente';
 import { Injectable } from '@angular/core';
+import {HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class PacienteService {
@@ -13,8 +14,16 @@ export class PacienteService {
     private urlGetPacientes: string = 'http://localhost:8080/api/clientes';
     private pacientes: Paciente[];
 
+    private httpHeader = new HttpHeaders({'Content-Type': 'application/json'});
 
+
+    //Metodo para listar los pacientes guardados en la base de datos.
     getPacientes(): Observable<Paciente[]>{
         return this.http.get<Paciente[]>(this.urlGetPacientes);
+    }
+
+    //Metodo para crear un paciente nuevo.
+    create(pacienteNuevo: Paciente): Observable<Paciente>{
+        return this.http.post<Paciente>(this.urlGetPacientes, pacienteNuevo, {headers:this.httpHeader})
     }
 }
