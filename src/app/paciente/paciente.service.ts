@@ -26,4 +26,21 @@ export class PacienteService {
     create(pacienteNuevo: Paciente): Observable<Paciente>{
         return this.http.post<Paciente>(this.urlGetPacientes, pacienteNuevo, {headers:this.httpHeader})
     }
+
+    //Método para buscar el cliente por id.
+    getById(id): Observable<Paciente>{
+        return this.http.get<Paciente>(`${this.urlGetPacientes}/${id}`);
+    }
+
+    //Método para editar el cliente.
+    update(pacienteAct: Paciente): Observable<Paciente>{
+        return this.http.put<Paciente>(`${this.urlGetPacientes}/${pacienteAct.id}`, pacienteAct, {headers:this.httpHeader});
+    }
+
+    //Método para borrar el paciente.
+    delete(id: number): Observable<Paciente>{
+        return this.http.delete<Paciente>(`${this.urlGetPacientes}/${id}`, {headers:this.httpHeader});
+    }
+
+
 }

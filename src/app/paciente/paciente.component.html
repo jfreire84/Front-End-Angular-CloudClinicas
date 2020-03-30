@@ -16,6 +16,8 @@
                   <th>Fecha de Nacimiento</th>
                   <th>Fecha de Registro</th>
                   <th>Historial</th>
+                  <th>Editar</th>
+                  <th>Eliminar</th>
               </tr>
           </thead>
           <tbody>
@@ -27,6 +29,9 @@
                 <td>{{pacientes.fechanac}}</td>
                 <td>{{pacientes.fecha}}</td>
                 <td>{{pacientes.historial}}</td>
+                <td><button name="editar" id="button" [routerLink] = "['/paciente/formulario', pacientes.id]" class="btn btn-primary">Editar</button></td>
+                <td><button name="eliminar" id="button" (click)='delete(pacientes)' class="btn btn-danger">Eliminar</button></td>
+
 
             </tr>
           </tbody>

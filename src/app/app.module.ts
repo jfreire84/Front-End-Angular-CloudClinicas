@@ -18,6 +18,7 @@ const routes = [
   {path: 'home', component: HomeComponent},
   {path: 'pacientes', component: PacienteComponent},
   {path: 'paciente/formulario', component: FormularioComponent},
+  {path: 'paciente/formulario/:id', component: FormularioComponent},
 ]
 
 @NgModule({
