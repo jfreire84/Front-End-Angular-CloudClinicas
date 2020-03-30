@@ -1,8 +1,10 @@
 import {HttpClient} from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { Paciente } from './paciente';
 import { Injectable } from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
+import {catchError} from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Injectable()
 export class PacienteService {
@@ -23,8 +25,15 @@ export class PacienteService {
     }
 
     //Metodo para crear un paciente nuevo.
+
     create(pacienteNuevo: Paciente): Observable<Paciente>{
-        return this.http.post<Paciente>(this.urlGetPacientes, pacienteNuevo, {headers:this.httpHeader})
+        return this.http.post<Paciente>(this.urlGetPacientes, pacienteNuevo, {headers:this.httpHeader}).pipe(
+            catchError(e => {
+                console.error(e.error.mensaje);
+                Swal.fire('Error al crear el paciente', e.error.mensaje, 'error' );
+                return throwError(e);
+            })
+        )
     }
 
     //Método para buscar el cliente por id.
@@ -34,12 +43,24 @@ export class PacienteService {
 
     //Método para editar el cliente.
     update(pacienteAct: Paciente): Observable<Paciente>{
-        return this.http.put<Paciente>(`${this.urlGetPacientes}/${pacienteAct.id}`, pacienteAct, {headers:this.httpHeader});
+        return this.http.put<Paciente>(`${this.urlGetPacientes}/${pacienteAct.id}`, pacienteAct, {headers:this.httpHeader}).pipe(
+            catchError(e => {
+                console.error(e.error.mensaje);
+                Swal.fire('Error al editar el paciente', e.error.mensaje, 'error' );
+                return throwError(e);
+            })
+        );
     }
 
     //Método para borrar el paciente.
     delete(id: number): Observable<Paciente>{
-        return this.http.delete<Paciente>(`${this.urlGetPacientes}/${id}`, {headers:this.httpHeader});
+        return this.http.delete<Paciente>(`${this.urlGetPacientes}/${id}`, {headers:this.httpHeader}).pipe(
+            catchError(e => {
+                console.error(e.error.mensaje);
+                Swal.fire('Error al eliminar el paciente', e.error.mensaje, 'error' );
+                return throwError(e);
+            })
+        );
     }
 
 
