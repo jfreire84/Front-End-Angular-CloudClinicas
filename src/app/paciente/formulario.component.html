@@ -4,7 +4,7 @@
         <h5 class="card-title">Nuevo Paciente</h5>
         <p class="card-text">
 
-            <form class="form-horizontal">
+            <form class="form-horizontal" #pacienteForm="ngForm">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="email">Nombre:</label>
                     <div class="col-sm-10">
@@ -79,10 +79,10 @@
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-primary" role="button" (click)='create()'
-                            *ngIf="(!pacienteNuevo.id) else elseBlock">Crear</button>
+                            *ngIf="(!pacienteNuevo.id) else elseBlock" [disabled]="!pacienteForm.form.valid">Crear</button>
                         <ng-template #elseBlock>
                             <button type="submit" role="button" class="btn btn-primary"
-                                (click)='update()'>Actualizar</button>
+                                (click)='update()' [disabled]="!pacienteForm.form.valid">Actualizar</button>
 
                         </ng-template>
 
