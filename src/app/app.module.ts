@@ -11,6 +11,9 @@ import { HttpClientModule} from '@angular/common/http';
 import { PacienteService} from './paciente/paciente.service';
 import { FormularioComponent } from './paciente/formulario.component';
 import { FormsModule } from '@angular/forms';
+import { FichaComponent } from './paciente/ficha/ficha.component';
+import { LoginComponent } from './usuarios/login.component';
+
 
 
 const routes = [
@@ -19,7 +22,10 @@ const routes = [
   {path: 'pacientes', component: PacienteComponent},
   {path: 'paciente/formulario', component: FormularioComponent},
   {path: 'paciente/formulario/:id', component: FormularioComponent},
+  {path: 'paciente/ver/:id', component: FichaComponent},
+  {path: 'login', component: LoginComponent},
 ]
+
 
 @NgModule({
   declarations: [
@@ -28,7 +34,9 @@ const routes = [
     HeaderComponent,
     HomeComponent,
     PacienteComponent,
-    FormularioComponent
+    FormularioComponent,
+    FichaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

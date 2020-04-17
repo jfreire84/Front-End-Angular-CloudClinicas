@@ -1,0 +1,45 @@
+<div class="card mb-3 ">
+    <div class="card-header bg-primary text-white">{{titulo}}</div>
+    <div class="card-body">
+        
+        <div>
+
+
+            <table  class="table">
+        
+                <tbody>
+                    <tr>
+                        <th scope="row">Id</th>
+                        <td>{{paciente.id}}</td>
+                      </tr>
+                  <tr>
+                    <th *ngIf="paciente" scope="row">Nombre</th>
+                    <td>{{paciente.nombre}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Apellidos</th>
+                    <td>{{paciente.apellidos}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Email</th>
+                    <td>{{paciente.email}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fecha de nacimiento</th>
+                    <td>{{paciente.fechanac | date:'dd-MM-yyyy'}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fecha de Registro</th>
+                    <td>{{paciente.fecha | date:'dd-MM-yyyy'}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Historial</th>
+                    <td>{{paciente.historial}}</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        <td><button name="editar" id="button" [routerLink] = "['/paciente/formulario']" class="btn btn-primary">Editar</button></td>
+
+    </div>
+</div>
