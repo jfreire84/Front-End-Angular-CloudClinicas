@@ -13,6 +13,8 @@ import { FormularioComponent } from './paciente/formulario.component';
 import { FormsModule } from '@angular/forms';
 import { FichaComponent } from './paciente/ficha/ficha.component';
 import { LoginComponent } from './usuarios/login.component';
+import { DetallesFacturaComponent } from './facturas/detalles-factura.component';
+import { ListadoFacturasComponent } from './facturas/listado-facturas.component';
 
 
 
@@ -24,6 +26,8 @@ const routes = [
   {path: 'paciente/formulario/:id', component: FormularioComponent},
   {path: 'paciente/ver/:id', component: FichaComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'facturas/:id', component: DetallesFacturaComponent},
+  {path: 'facturas', component: ListadoFacturasComponent}
 ]
 
 
@@ -36,7 +40,9 @@ const routes = [
     PacienteComponent,
     FormularioComponent,
     FichaComponent,
-    LoginComponent
+    LoginComponent,
+    DetallesFacturaComponent,
+    ListadoFacturasComponent
   ],
   imports: [
     BrowserModule,
