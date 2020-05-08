@@ -1,3 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+
+
+
+body { 
+    margin-bottom: 60px;
+}
+
+

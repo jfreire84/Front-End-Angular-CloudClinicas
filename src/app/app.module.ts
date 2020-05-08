@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,11 +9,16 @@ import { PacienteComponent } from './paciente/paciente.component';
 import { HttpClientModule} from '@angular/common/http';
 import { PacienteService} from './paciente/paciente.service';
 import { FormularioComponent } from './paciente/formulario.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FichaComponent } from './paciente/ficha/ficha.component';
 import { LoginComponent } from './usuarios/login.component';
 import { DetallesFacturaComponent } from './facturas/detalles-factura.component';
 import { ListadoFacturasComponent } from './facturas/listado-facturas.component';
+import { FacturasFormComponent } from './facturas/facturas-form.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -27,7 +31,9 @@ const routes = [
   {path: 'paciente/ver/:id', component: FichaComponent},
   {path: 'login', component: LoginComponent},
   {path: 'facturas/:id', component: DetallesFacturaComponent},
-  {path: 'facturas', component: ListadoFacturasComponent}
+  {path: 'facturas', component: ListadoFacturasComponent},
+  {path: 'facturas/form/:pacienteId', component: FacturasFormComponent}
+  
 ]
 
 
@@ -42,13 +48,19 @@ const routes = [
     FichaComponent,
     LoginComponent,
     DetallesFacturaComponent,
-    ListadoFacturasComponent
+    ListadoFacturasComponent,
+    FacturasFormComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [PacienteService],
   bootstrap: [AppComponent]

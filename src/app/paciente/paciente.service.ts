@@ -68,7 +68,7 @@ export class PacienteService {
         )
     }
 
-    //Método para buscar el cliente por id.
+    //Método para buscar el paciente por id.
     getById(id): Observable<Paciente> {
         return this.http.get<Paciente>(`${this.urlGetPacientes}/${id}`).pipe(
 

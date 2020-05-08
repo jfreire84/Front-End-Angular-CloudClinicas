@@ -1,7 +1,17 @@
+
 .textocontacto{
     text-align: center;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0px;
+  height: 60px;
+  width:100%;
+}
+
+
+/*
 footer {
     position:absolute;
     height:50px;
@@ -16,3 +26,5 @@ footer {
   footer.bottom {
     bottom:0;
     }
+    
+*/

@@ -39,8 +39,13 @@
         </tbody>
       </table>
     </div>
-    <td><button name="editar" id="button" [routerLink]="['/paciente/formulario']"
-        class="btn btn-primary">Editar</button></td>
+     <th>
+         <button name="editar" id="button" [routerLink]="['/paciente/formulario']"
+        class="btn btn-primary">Editar</button>
+      </th>
+      <th>
+          <button type="button" class="btn btn-success" [routerLink] = "['/facturas/form', paciente.id]">Nueva Factura</button>  
+        </th>
 
     <div><br><br></div>
     <div class="card-header bg-primary text-white text-center font-weight-bold">Facturas Relacionadas</div>
@@ -70,7 +75,7 @@
               <td>{{item.observacion}}</td>
               <td>{{item.fechaCreacionFac}}</td>
               <td>{{item.id}}</td>
-              <td><button type="button" class="btn btn-secondary" [routerLink]="['/facturas/ver', item.id]">Ver</button>
+              <td><button type="button" class="btn btn-secondary" [routerLink]="['/facturas', item.id]">Ver</button>
                 <td><button type="button" class="btn btn-danger" (click)= "delete(factura)" >Eliminar</button>
               </td>
 

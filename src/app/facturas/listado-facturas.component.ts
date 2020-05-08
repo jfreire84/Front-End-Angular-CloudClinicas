@@ -8,7 +8,6 @@ import { Paciente } from '../paciente/paciente';
 @Component({
   selector: 'app-listado-facturas',
   templateUrl: './listado-facturas.component.html',
-  styleUrls: ['./listado-facturas.component.css']
 })
 export class ListadoFacturasComponent implements OnInit {
 
