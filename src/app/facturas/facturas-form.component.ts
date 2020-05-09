@@ -67,19 +67,59 @@ export class FacturasFormComponent implements OnInit {
     let tratamiento = event.option.value as Tratamiento;
     console.log(tratamiento);
 
-    let nuevaLinea = new ItemFactura();
-    nuevaLinea.tratamiento = tratamiento;
-    //Añadimos la nueva linea a la factura
-    this.factura.lineasFactura.push(nuevaLinea);
+    if(this.existeItem(tratamiento.id)){
+      this.aumentaCantidad(tratamiento.id);
+    }else{
+      let nuevaLinea = new ItemFactura();
+      nuevaLinea.tratamiento = tratamiento;
+      //Añadimos la nueva linea a la factura
+      this.factura.lineasFactura.push(nuevaLinea);
+    }
 
-    //Para poder a volver a buscar otro productos y agregar otra linea.
+  
+
+    //Para poder a volver a buscar otro tratamiennto y agregar otra linea.
     //Limpiamos el autocomplete.
     this.autocompleteControl.setValue('');
     event.option.focus();
     event.option.deselect();
+  }
 
+  //Método para actualizar la cantidad de Tratamientos
+  actualizarCantidad(id: number, event: any): void{
+    let cantidad: number = event.target.value as number;  
+
+    this.factura.lineasFactura = this.factura.lineasFactura.map((item: ItemFactura) => {
+      if(id === item.tratamiento.id){
+        item.cantidad = cantidad;
+      }
+      return item;
+    })
 
   }
+ 
+  //Método para averiguar si ya existe el tratamiento dentro de la factura
+  existeItem(id: number): boolean{
+      let existe = false;
+      this.factura.lineasFactura.forEach((item: ItemFactura) => {
+        if (id === item.tratamiento.id) {
+          existe = true;
+        }
+      });
+      return existe;
+  }
+
+  //Metodo para aumentar la cantidad si el tratamiento ya existe en la factura.
+  aumentaCantidad(id: number): void {
+    this.factura.lineasFactura = this.factura.lineasFactura.map((item: ItemFactura) => {
+      if (id === item.tratamiento.id) {
+        ++item.cantidad;
+      }
+      return item;
+    });
+  }
+
+
  
   }
 
