@@ -67,6 +67,7 @@ export class FacturasFormComponent implements OnInit {
     let tratamiento = event.option.value as Tratamiento;
     console.log(tratamiento);
 
+    //Averiguamos si el tratamiento ya existe. Si no lo agregamos a una nueva linea
     if(this.existeItem(tratamiento.id)){
       this.aumentaCantidad(tratamiento.id);
     }else{
@@ -117,6 +118,12 @@ export class FacturasFormComponent implements OnInit {
       }
       return item;
     });
+  }
+
+  //Método para eliminar la linea de la factura.
+  eliminarLineaFactura(id: number): void{
+    this.factura.lineasFactura = this.factura.lineasFactura.filter((item: ItemFactura) => 
+    id !== item.tratamiento.id);
   }
 
 

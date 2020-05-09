@@ -11,4 +11,12 @@ export class Facturas {
     paciente: Paciente;
     totalImporteFactura: number;
 
+    totalFactura(): number{
+        this.totalImporteFactura = 0;
+        this.lineasFactura.forEach((lineas: ItemFactura) =>{
+                this.totalImporteFactura = this.totalImporteFactura + lineas.calcularImporte();
+        });
+        return this.totalImporteFactura;
+    }
+
 }
