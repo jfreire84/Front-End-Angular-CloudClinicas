@@ -28,19 +28,48 @@
                 </div>
             </div>
 
+            <!--Buscador de Tratamientos. Filtro-->
 
             <div class="form-group row">
                 <div class="col-sm-6">
                     <mat-form-field class="example-full-width">
                         <input type="text" placeholder="Añadir tratamiento" aria-label="Number" matInput
                             [formControl]="myControl" [matAutocomplete]="auto">
-                        <mat-autocomplete #auto="matAutocomplete" [displayWith] = "mostrarNombreTratamiento">
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith] = "mostrarNombreTratamiento" (optionSelected) = "seleccionarTraramiento($event)">
                             <mat-option *ngFor="let option of productosFiltrados | async" [value]="option">
                                 {{option.nombre}}
                             </mat-option>
                         </mat-autocomplete>
                     </mat-form-field>
                 </div>
+
+
+                <!--
+                    Tabla Html para las lineas
+                -->
+                <table class="table table-striped table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>Tratamiento</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of factura.lineasFactura">
+                                <td>{{item.tratamiento.nombre}}</td>
+                                <td>{{item.tratamiento.precio}}</td>
+                                <td>{{item.cantidad}}</td>
+                                <td>{{item.calcularImporte()}}</td>
+                                <td></td>
+                            </tr>
+
+                        </tbody>
+                </table>
+
+
+
             </div>
 
 

@@ -9,6 +9,7 @@ import { ItemFactura } from './modelo/item-factura';
 import {FormControl} from '@angular/forms';
 import {Observable, from} from 'rxjs';
 import {map} from 'rxjs/operators';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 
 
@@ -59,6 +60,25 @@ export class FacturasFormComponent implements OnInit {
   //Método para mostrar el nombre del Tratamiento dentro del la barra al seleccionaren el filtro.
   mostrarNombreTratamiento(tratamiento?: Tratamiento): string | undefined {
     return tratamiento ? tratamiento.nombre: undefined;
+  }
+
+  //Método que va a manejar el objeto seleccionado en el buscador.
+  seleccionarTraramiento(event: MatAutocompleteSelectedEvent): void{
+    let tratamiento = event.option.value as Tratamiento;
+    console.log(tratamiento);
+
+    let nuevaLinea = new ItemFactura();
+    nuevaLinea.tratamiento = tratamiento;
+    //Añadimos la nueva linea a la factura
+    this.factura.lineasFactura.push(nuevaLinea);
+
+    //Para poder a volver a buscar otro productos y agregar otra linea.
+    //Limpiamos el autocomplete.
+    this.autocompleteControl.setValue('');
+    event.option.focus();
+    event.option.deselect();
+
+
   }
  
   }
