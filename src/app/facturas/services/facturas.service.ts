@@ -53,9 +53,7 @@ delete(id: number): Observable<void> {
 
 
 //Método para crear la factura
-
-
-create(factura: Facturas): Observable<Facturas> {
+crearFactura(factura: Facturas): Observable<Facturas> {
   return this.http.post<Facturas>(this.urlEndPoint, factura);
 }
 

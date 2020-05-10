@@ -10,6 +10,7 @@ import {FormControl} from '@angular/forms';
 import {Observable, from} from 'rxjs';
 import {map} from 'rxjs/operators';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import Swal from 'sweetalert2';
 
 
 
@@ -126,7 +127,14 @@ export class FacturasFormComponent implements OnInit {
     id !== item.tratamiento.id);
   }
 
-
+//Método para crear la Factura
+crearFactura(): void{
+  console.log(this.factura);
+  this.facturaService.crearFactura(this.factura).subscribe(factura => {
+    Swal.fire(this.titulo, `Factura creada con exito!`, 'success');
+    this.router.navigate(['/pacientes']);
+  })
+}
  
   }
 

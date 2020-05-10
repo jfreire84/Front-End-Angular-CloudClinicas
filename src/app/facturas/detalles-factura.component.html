@@ -1,8 +1,8 @@
-<div class="card bg-light">
+<div class="card bg-light" *ngIf="factura">
     <div class="card-header">{{titulo}}: {{factura.descripcion}}</div>
     <div class="card-body">
 
-      <!--Mostrar los datos del cliente relacionado con esta factura
+      <!--Mostrar los datos del cliente relacionado con esta factura-->
         
       <ul class="list-group my-2" >
         <li class="list-group-item list-group-item-primary" >Datos del Paciente</li>
@@ -10,8 +10,7 @@
         <li class="list-group-item">{{factura.paciente.apellidos}}</li>
         <li class="list-group-item">Fecha:</li>
       </ul>
-    -->
-  
+
       <ul class="list-group my-2">
         <li class="list-group-item list-group-item-primary">Datos de la factura</li>
         <li class="list-group-item">Id: {{factura.id}}</li>
@@ -41,9 +40,9 @@
           </tr>
         </tbody>
       </table>
-      <h5 class="float-right">
-        <span>Total Factura</span>: <span class="badge badge-secondary">{{factura.totalImporteFactura}}</span>
-      </h5>
+    
+
+    
   
       <div class="card border-info mb-4" style="max-width: 350px;">
         <div class="card card-header">
