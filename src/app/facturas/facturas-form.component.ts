@@ -25,7 +25,7 @@ export class FacturasFormComponent implements OnInit {
   factura: Facturas = new Facturas();
 
   myControl = new FormControl();
-  //filteredOptions: Observable<Tratamiento[]>;
+
 
   autocompleteControl = new FormControl();
 

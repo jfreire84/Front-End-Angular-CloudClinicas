@@ -7,6 +7,7 @@ import { catchError, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Paciente } from 'src/app/paciente/paciente';
 import { Tratamiento } from '../modelo/tratamiento';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class FacturasService {
  
   private httpHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private router: Router) { 
 
   }
 
@@ -44,10 +45,20 @@ export class FacturasService {
     );
 }
 
+
+
 //Método para borrar la factura
+/*
 delete(id: number): Observable<void> {
   return this.http.delete<void>(`${this.urlEndPoint}/${id}`);
 }
+*/
+
+delete(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.urlEndPoint}/${id}`, { headers: this.httpHeader });
+
+}
+
 
 
 
@@ -63,6 +74,7 @@ filtrarTratamientos(texto: string): Observable<Tratamiento[]>{
 }
 
 
+<<<<<<< HEAD
 //Funcion para crear el tratamiento
 crearTratamiento(tratamiento: Tratamiento): Observable<Tratamiento> {
   return this.http.post<Tratamiento>(this.urlEndPointTratamientos, tratamiento);
@@ -76,6 +88,53 @@ getTratamientos(): Observable<Tratamiento[]> {
   return this.http.get<Tratamiento[]>(`${this.urlEndPoint}`);
  
 }
+=======
+  //Método para listar todas los tratamientos
+
+  getTratamientos(): Observable<Tratamiento[]> {
+    return this.http.get<Tratamiento[]>(`${this.urlEndPointTratamientos}`).pipe(
+        map(response => {
+            let tratamiento = response as Tratamiento[];
+                return tratamiento;
+            })
+    );
+}
+
+//Método para crear el tratamiento
+crearTratamiento(tratamiento: Tratamiento): Observable<Tratamiento> {
+  return this.http.post<Tratamiento>(this.urlEndPointTratamientos, tratamiento);
+}
+
+/*
+private noAutorizado(e): boolean{
+  if(e.status == 401 || e.status == 403){
+  this.router.navigate(['http://www.google.com']);
+  return true;
+  }
+}
+
+createTra(tratamientoNuevo: Tratamiento): Observable<Tratamiento> {
+  return this.http.post<Tratamiento>(this.urlEndPointTratamientos, tratamientoNuevo).pipe(
+      catchError(e => {
+
+          //Manejamos los errores
+
+          if(this.noAutorizado(e)){
+              return throwError(e);
+          }
+
+          if(e.status == 400){
+              return throwError(e);
+          }
+
+          console.error(e.error.mensaje);
+          Swal.fire('Error al crear el paciente', e.error.mensaje, 'error');
+          return throwError(e);
+      })
+  )
+}
+*/
+>>>>>>> cf4ad9c... Listado y crear tratamientos
 
 
 }

@@ -7,7 +7,11 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-listado-tratamiento-form',
   templateUrl: './listado-tratamiento-form.component.html',
+<<<<<<< HEAD
 
+=======
+  styleUrls: ['./listado-tratamiento-form.component.css']
+>>>>>>> cf4ad9c... Listado y crear tratamientos
 })
 export class ListadoTratamientoFormComponent implements OnInit {
 

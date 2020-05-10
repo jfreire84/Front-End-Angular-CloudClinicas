@@ -33,7 +33,7 @@ export class FichaComponent implements OnInit {
   }
 
   //Método para borrar la factura
-      delete(factura: Facturas): void{
+      delete(facturaB: Facturas): void{
        
             //Ventana si está seguro que desea eliminar el paciente de Sweetalert2.
             const swalWithBootstrapButtons = Swal.mixin({
@@ -46,7 +46,7 @@ export class FichaComponent implements OnInit {
             
             swalWithBootstrapButtons.fire({
               title: '¿Estás seguro?',
-              text:  `¿Seguro que deseas borrar la factura`,
+              text:  `¿Seguro que deseas borrar la factura?`,
               icon: 'warning',
               showCancelButton: true,
               confirmButtonText: 'Si, eliminar!',
@@ -54,9 +54,9 @@ export class FichaComponent implements OnInit {
               reverseButtons: true
             }).then((result) => {
               if (result.value) {
-                this.facturaService.delete(factura.id).subscribe(
+                this.facturaService.delete(facturaB.id).subscribe(
                   response => {
-                    this.paciente.facturas = this.paciente.facturas.filter(fac => fac !== factura)
+                    this.paciente.facturas = this.paciente.facturas.filter(fac => fac !== facturaB)
                     swalWithBootstrapButtons.fire(
                       'Borrado!',
                       `Ha sido borrada con éxito`,

@@ -5,6 +5,10 @@ import { Tratamiento } from './modelo/tratamiento';
 @Component({
   selector: 'app-listado-tratamientos',
   templateUrl: './listado-tratamientos.component.html',
+<<<<<<< HEAD
+=======
+  styleUrls: ['./listado-tratamientos.component.css']
+>>>>>>> cf4ad9c... Listado y crear tratamientos
 })
 export class ListadoTratamientosComponent implements OnInit {
 
