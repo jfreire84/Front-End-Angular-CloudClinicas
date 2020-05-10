@@ -4,7 +4,7 @@
     left: 50%;
     transform: translatex(-50%);
     margin:30px;
-    font-size: 15px;
+    
 }
 
 .space1{
@@ -12,6 +12,18 @@
 }
 
 .titulo{
-    background-color: rgb(68, 69, 70);
+    margin-top: 15px;
+}
+
+.nombreEmpresa{
+    font-size: 25px;
+}
+
+.desEmpresa{
+    font-size: 18px;
+}
+
+.banner{
+    background-color: #CAEBF2;
 }
 

@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   titulo: string = 'CloudClinicas';
-  subtitulo: string = 'Sistema de gestión de cliente OnLine';
+  subtitulo: string = 'Sistema de gestión de clientes OnLine';
 
   ngOnInit(): void {
   }

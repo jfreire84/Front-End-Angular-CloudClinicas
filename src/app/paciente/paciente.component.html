@@ -20,7 +20,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let pacientes of pacientes">
-                <td><button type="button" [routerLink] = "['/paciente/ver', pacientes.id]" class="btn btn-secondary">Ver Ficha</button></td>
+                <td><button type="button" [routerLink] = "['/paciente/ver/', pacientes.id]" class="btn btn-secondary">Ver Ficha</button></td>
                 <td>{{pacientes.nombre}}</td>
                 <td>{{pacientes.apellidos}}</td>
                 <td>{{pacientes.email}}</td>

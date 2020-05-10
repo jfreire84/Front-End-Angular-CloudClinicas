@@ -34,7 +34,7 @@ export class FichaComponent implements OnInit {
 
   //Método para borrar la factura
       delete(factura: Facturas): void{
-
+       
             //Ventana si está seguro que desea eliminar el paciente de Sweetalert2.
             const swalWithBootstrapButtons = Swal.mixin({
               customClass: {
@@ -68,7 +68,11 @@ export class FichaComponent implements OnInit {
               } 
       
     })
+
+
   }
+
+  
 
   }
 
