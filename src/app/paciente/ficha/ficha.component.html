@@ -63,7 +63,7 @@
               <th>Fecha</th>
               <th>Total</th>
               <th>Ver Factura</th>
-              <th>Eliminar</th>
+        
             </tr>
 
           </thead>
@@ -75,7 +75,6 @@
               <td>{{item.fechaCreacionFac}}</td>
               <td>{{item.totalImporteFactura}}</td>
               <td><button type="button" class="btn btn-secondary" [routerLink]="['/facturas', item.id]">Ver</button>
-                <td><button type="button" class="btn btn-danger" (click)= "delete(item)" >Eliminar</button>
               </td>
 
             </tr>
