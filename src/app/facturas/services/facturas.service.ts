@@ -48,15 +48,9 @@ export class FacturasService {
 
 
 //Método para borrar la factura
-/*
-delete(id: number): Observable<void> {
-  return this.http.delete<void>(`${this.urlEndPoint}/${id}`);
-}
-*/
 
-delete(id: number): Observable<void> {
-  return this.http.delete<void>(`${this.urlEndPoint}/${id}`, { headers: this.httpHeader });
-
+borrarFactura(id: number): Observable<Facturas > {
+  return this.http.delete<Facturas>(`${this.urlEndPoint}/${id}`, { headers: this.httpHeader });
 }
 
 

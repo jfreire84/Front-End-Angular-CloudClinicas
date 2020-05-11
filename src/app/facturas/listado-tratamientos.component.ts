@@ -43,7 +43,7 @@ export class ListadoTratamientosComponent implements OnInit {
       reverseButtons: true
     }).then((result) => {
       if (result.value) {
-        this.facturaService.delete(tratamiento.id).subscribe(
+        this.facturaService.borrarTratamiento(tratamiento.id).subscribe(
           response => {
             this.tratamientos = this.tratamientos.filter(trat => trat !== tratamiento)
             swalWithBootstrapButtons.fire(
