@@ -39,10 +39,6 @@ const routes = [
   {path: 'facturas/form/:pacienteId', component: FacturasFormComponent},
   {path: 'tratamientos', component: ListadoTratamientosComponent},
   {path: 'tratamientos/form', component: ListadoTratamientoFormComponent},
-<<<<<<< HEAD
-
-=======
->>>>>>> cf4ad9c... Listado y crear tratamientos
   
 ]
 
@@ -60,14 +56,8 @@ const routes = [
     DetallesFacturaComponent,
     ListadoFacturasComponent,
     FacturasFormComponent,
-<<<<<<< HEAD
-    ListadoTratamientoFormComponent,
-    ListadoTratamientosComponent
-
-=======
     ListadoTratamientosComponent,
     ListadoTratamientoFormComponent
->>>>>>> cf4ad9c... Listado y crear tratamientos
   ],
   imports: [
     BrowserModule,

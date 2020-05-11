@@ -74,21 +74,6 @@ filtrarTratamientos(texto: string): Observable<Tratamiento[]>{
 }
 
 
-<<<<<<< HEAD
-//Funcion para crear el tratamiento
-crearTratamiento(tratamiento: Tratamiento): Observable<Tratamiento> {
-  return this.http.post<Tratamiento>(this.urlEndPointTratamientos, tratamiento);
-
-}
-
-//Funcion para listar los tratamientos.
-
-
-getTratamientos(): Observable<Tratamiento[]> {
-  return this.http.get<Tratamiento[]>(`${this.urlEndPoint}`);
- 
-}
-=======
   //Método para listar todas los tratamientos
 
   getTratamientos(): Observable<Tratamiento[]> {
@@ -134,7 +119,6 @@ createTra(tratamientoNuevo: Tratamiento): Observable<Tratamiento> {
   )
 }
 */
->>>>>>> cf4ad9c... Listado y crear tratamientos
 
 
 }
