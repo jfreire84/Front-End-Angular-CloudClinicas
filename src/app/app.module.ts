@@ -19,6 +19,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListadoTratamientosComponent } from './facturas/listado-tratamientos.component';
+import { ListadoTratamientoFormComponent } from './facturas/listado-tratamiento-form.component';
+
 
 
 
@@ -33,7 +36,10 @@ const routes = [
   {path: 'login', component: LoginComponent},
   {path: 'facturas/:id', component: DetallesFacturaComponent},
   {path: 'facturas', component: ListadoFacturasComponent},
-  {path: 'facturas/form/:pacienteId', component: FacturasFormComponent}
+  {path: 'facturas/form/:pacienteId', component: FacturasFormComponent},
+  {path: 'tratamientos', component: ListadoTratamientosComponent},
+  {path: 'tratamientos/form', component: ListadoTratamientoFormComponent},
+
   
 ]
 
@@ -50,7 +56,10 @@ const routes = [
     LoginComponent,
     DetallesFacturaComponent,
     ListadoFacturasComponent,
-    FacturasFormComponent
+    FacturasFormComponent,
+    ListadoTratamientoFormComponent,
+    ListadoTratamientosComponent
+
   ],
   imports: [
     BrowserModule,
