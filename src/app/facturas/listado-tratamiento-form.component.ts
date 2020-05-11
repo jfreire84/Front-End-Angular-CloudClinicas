@@ -3,6 +3,7 @@ import { FacturasService } from './services/facturas.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tratamiento } from './modelo/tratamiento';
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listado-tratamiento-form',
@@ -13,11 +14,14 @@ export class ListadoTratamientoFormComponent implements OnInit {
 
   public tratamientoNuevo: Tratamiento = new Tratamiento();
 
+
+
   constructor( private router : Router, private tratamientoService : FacturasService, private activedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
+  //Método para crear tratamiento
   public create(): void {
     console.log(this.tratamientoNuevo);
     this.tratamientoService.crearTratamiento(this.tratamientoNuevo).subscribe(
@@ -29,5 +33,6 @@ export class ListadoTratamientoFormComponent implements OnInit {
     );
     console.log(this.tratamientoNuevo);
   }
+
 
 }

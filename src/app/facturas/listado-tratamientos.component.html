@@ -15,6 +15,7 @@
                   <th>Id</th>
                   <th>Nombre</th>
                   <th>Precio</th>
+                  <th>Eliminar</th>
               </tr>
           </thead>
           <tbody>
@@ -24,6 +25,7 @@
                 <td>{{item.nombre}}</td>
                 <td>{{item.precio}}</td>
                 
+                <td><button name="eliminar" id="button" (click)='delete(item)' class="btn btn-danger">Eliminar</button></td>
 
                  <!--
                 <td><button type="button" [routerLink] = "['/facturas', item.id]" class="btn btn-secondary">Ver</button></td>

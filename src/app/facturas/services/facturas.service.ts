@@ -90,35 +90,12 @@ crearTratamiento(tratamiento: Tratamiento): Observable<Tratamiento> {
   return this.http.post<Tratamiento>(this.urlEndPointTratamientos, tratamiento);
 }
 
-/*
-private noAutorizado(e): boolean{
-  if(e.status == 401 || e.status == 403){
-  this.router.navigate(['http://www.google.com']);
-  return true;
-  }
+//Método para borrar el tratamiento
+
+borrarTratamiento(id: number): Observable<Tratamiento > {
+  return this.http.delete<Tratamiento>(`${this.urlEndPointTratamientos}/${id}`, { headers: this.httpHeader });
 }
 
-createTra(tratamientoNuevo: Tratamiento): Observable<Tratamiento> {
-  return this.http.post<Tratamiento>(this.urlEndPointTratamientos, tratamientoNuevo).pipe(
-      catchError(e => {
-
-          //Manejamos los errores
-
-          if(this.noAutorizado(e)){
-              return throwError(e);
-          }
-
-          if(e.status == 400){
-              return throwError(e);
-          }
-
-          console.error(e.error.mensaje);
-          Swal.fire('Error al crear el paciente', e.error.mensaje, 'error');
-          return throwError(e);
-      })
-  )
-}
-*/
 
 
 }
