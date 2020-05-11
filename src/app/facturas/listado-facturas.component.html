@@ -14,7 +14,6 @@
                   <th>Descripción</th>
                   <th>Observación</th>
                   <th>Fecha</th>
-                  <th>Total</th>
                   <th>Ver Factura</th>
                   <th>Eliminar</th>
               </tr>
@@ -26,7 +25,6 @@
                 <td>{{item.descripcion}}</td>
                 <td>{{item.observacion}}</td>
                 <td>{{item.fechaCreacionFac}}</td>
-                <td>{{item.totalImporteFactura}}</td>
                 
                 <td><button type="button" [routerLink] = "['/facturas', item.id]" class="btn btn-secondary">Ver</button></td>
                 <td><button name="eliminar" id="button" (click)='delete(item)' class="btn btn-danger">Eliminar</button></td>

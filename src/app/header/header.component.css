@@ -4,6 +4,7 @@
     left: 50%;
     transform: translatex(-50%);
     margin:30px;
+    font-size: 17px;
     
 }
 
@@ -21,9 +22,11 @@
 
 .desEmpresa{
     font-size: 18px;
+    
 }
 
 .banner{
     background-color: #CAEBF2;
+    
 }
 
